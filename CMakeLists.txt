@@ -4,3 +4,4 @@ project(LeetCode)
 set(CMAKE_CXX_STANDARD 23)
 
 add_subdirectory(1dArrayRunningSum)
+add_subdirectory(LinkedListCycle)
