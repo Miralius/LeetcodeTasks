@@ -6,61 +6,9 @@
 #include <set>
 #include <vector>
 #include <iostream>
+#include "../LinkedList/LinkedList.h"
 
-struct ListNode
-{
-    [[maybe_unused]] int val;
-    ListNode* next;
-
-    explicit ListNode(int x) : val(x), next(nullptr) {}
-};
-
-
-class List
-{
-public:
-    explicit List(const std::vector<int>& numbers, int pos = -1)
-    : size(numbers.size())
-    {
-        ListNode* prevNode;
-        ListNode* nodeForLoop = nullptr;
-        for (size_t index = 0; index < numbers.size(); ++index)
-        {
-            if (!head)
-            {
-                head = new ListNode(numbers[index]);
-                prevNode = head;
-            } else
-            {
-                prevNode->next = new ListNode(numbers[index]);
-                prevNode = prevNode->next;
-            }
-            if (index == pos)
-            {
-                nodeForLoop = prevNode;
-            }
-        }
-        if (nodeForLoop)
-        {
-            prevNode->next = nodeForLoop;
-        }
-    }
-
-    ~List()
-    {
-        ListNode* nextNode = head;
-        while (size != 0)
-        {
-            nextNode = nextNode->next;
-            delete head;
-            --size;
-            head = nextNode;
-        }
-    }
-
-    ListNode* head = nullptr;
-    size_t size;
-};
+using namespace Leetcode;
 
 class Solution
 {

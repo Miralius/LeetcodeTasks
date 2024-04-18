@@ -1,0 +1,2 @@
+add_library(LinkedList LinkedList.h)
+set_target_properties(LinkedList PROPERTIES LINKER_LANGUAGE CXX)
