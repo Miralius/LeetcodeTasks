@@ -1,0 +1,1 @@
+add_executable(SingleNumber main.cpp)
